@@ -92,7 +92,7 @@ pcr_ddct <- function(df, group_var, reference_gene, reference_group,
   ddct <- .pcr_calibrate(dct, reference_group = reference_group, tidy = TRUE)
 
   # calculate the relative expression
-  norm_rel <- mutate(ddct, relative_expression = 2 ^ -calibrated)
+  norm_rel <- mutate(ddct, relative_expression = 2 ^ calibrated)
 
   if(mode == 'separate_tube') {
     # calculate the error from ct values
